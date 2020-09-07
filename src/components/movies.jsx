@@ -21,6 +21,11 @@ class Movies extends Component {
                 <td>{movie.genre.name}</td>
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
+                <td>
+                  <button type="button" class="btn btn-danger btn-sm">
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
