@@ -4,7 +4,14 @@ class Like extends Component {
   render() {
     let classes = "fa fa-heart";
     if (!this.props.Liked) classes += "-o";
-    return <i className={classes} area-hidden="true"></i>;
+    return (
+      <i
+        onClick={this.props.onClick}
+        className={classes}
+        area-hidden="true"
+        style={{ cursor: "pointer" }}
+      ></i>
+    );
   }
 }
 
