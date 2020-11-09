@@ -18,7 +18,7 @@ const Pagination = (props) => {
               onClick={() => onPageChange(page)}
               className="page-link"
               style={{ cursor: "pointer" }}
-              href="!#"
+              
             >
               {page}
             </a>
