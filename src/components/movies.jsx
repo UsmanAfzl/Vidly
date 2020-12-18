@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getMovies, deleteMovie } from "../services/movieService";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
@@ -80,6 +81,11 @@ class Movies extends Component {
         </div>
         <div className="col">
           <p>There are currently {filtered.length} movies in database.</p>
+          <div className="col">
+            <Link to="/movies/new" className="btn btn-primary">
+              New Movie
+            </Link>
+          </div>
           <MoviesTable
             movies={movies}
             sortColumn={sortColumn}
