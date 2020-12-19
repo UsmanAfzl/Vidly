@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+// columns: array
+// sortColumn: object
+// onSort: function
+
 class TableHeader extends Component {
   raiseSort = (path) => {
     const sortColumn = { ...this.props.sortColumn };
@@ -13,10 +17,11 @@ class TableHeader extends Component {
   };
 
   renderSortIcon = (column) => {
-    if (column.path !== this.props.sortColumn.path) return null;
-    if (this.props.sortColumn.order === "asc")
-      return <i className="fa fa-sort-asc"></i>;
-    return <i className="fa fa-sort-desc"></i>;
+    const { sortColumn } = this.props;
+
+    if (column.path !== sortColumn.path) return null;
+    if (sortColumn.order === "asc") return <i className="fa fa-sort-asc" />;
+    return <i className="fa fa-sort-desc" />;
   };
 
   render() {
@@ -25,11 +30,11 @@ class TableHeader extends Component {
         <tr>
           {this.props.columns.map((column) => (
             <th
+              className="clickable"
               key={column.path || column.key}
               onClick={() => this.raiseSort(column.path)}
             >
-              {column.label}
-              {this.renderSortIcon(column)}
+              {column.label} {this.renderSortIcon(column)}
             </th>
           ))}
         </tr>
