@@ -10,6 +10,8 @@ import MovieForm from "./components/movieForm";
 import Form from "./components/form";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import RegisterForm from "./components/registerForm";
+import LoginForm from "./components/loginForm";
 function App() {
   return (
     <React.Fragment>
@@ -19,6 +21,8 @@ function App() {
         <Switch>
           <Route path="/movies/:id" component={MovieForm} />
           <Route path="/form" component={Form} />
+          <Route path="/register" component={RegisterForm} />
+          <Route path="/login" component={LoginForm} />
           <Route path="/movies" component={Movies}></Route>
           <Route path="/customers" component={Customers}></Route>
           <Route path="/rentals" component={Rentals}></Route>
